@@ -3,34 +3,6 @@ function computerPlay() {
     return moves[Math.floor( Math.random()*moves.length )];
 }
 
-// this one is working
-// function playRound ( playerSelection, computerSelection ) {
-//     if(computerSelection == 'rock'){
-//         if(playerSelection == 'paper')
-//             return `${playerSelection} vs ${computerSelection} : player jeet gaya ` ;
-//         else if( playerSelection == 'rock')
-//             return `${playerSelection} vs ${computerSelection} : mukabala barabari ka raha ` ;
-//         else
-//             return `${playerSelection} vs ${computerSelection} : computer jeet gaya ` ;
-//     }
-//     else if(computerSelection == 'paper'){
-//         if(playerSelection == 'scissor')
-//             return `${playerSelection} vs ${computerSelection} : player jeet gaya ` ;
-//         else if( playerSelection == 'paper')
-//             return `${playerSelection} vs ${computerSelection} : mukabala barabari ka raha ` ;
-//         else
-//             return `${playerSelection} vs ${computerSelection} : computer jeet gaya ` ;
-//     }
-//     else if(computerSelection == 'scissor'){
-//         if(playerSelection == 'rock')
-//             return `${playerSelection} vs ${computerSelection} : player jeet gaya ` ;
-//         else if( playerSelection == 'scissor')
-//             return `${playerSelection} vs ${computerSelection} : mukabala barabari ka raha ` ;
-//         else
-//             return `${playerSelection} vs ${computerSelection} : computer jeet gaya ` ;
-//     }
-// }
-
 function playRound ( playerSelection, computerSelection ) {
     if(computerSelection == 'rock'){
         if(playerSelection == 'paper'){
@@ -69,16 +41,18 @@ function playRound ( playerSelection, computerSelection ) {
         }
     }
 }
+
 let playerScore =0;
 let computerScore =0;
 
-for( let round =1; round <=5; round++){
-    let playerSelection = String( prompt("kya select karte hao? rock paper scissor ") ) ;
-    let computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
-}
 
-console.log( " " );
-console.log( `player's score is ${playerScore} and computer's score is ${computerScore} ` );
-let winner = playerScore>computerScore ? "Player" : "computer" ;
-console.log( `vijeta hai ${winner} ` );
+const wrapper = document.querySelector("btn-group");
+wrapper.addEventListener('click', (event) => {
+  const isButton = event.target.nodeName === 'button';
+  if (!isButton) {
+    return;
+  }
+
+  console.dir(event.target.id);
+})
+

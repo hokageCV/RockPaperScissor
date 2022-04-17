@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+    background:  #2a3132;
+}
+/*-----------------------------------------*/
+.container{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    height: 40vh;
+    text-align: center;
+    font-size: 400%;
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
+.player-div{
+    width: 50%;
+    height: 100%;
+    background: #5e88b3;
+}
+.computer-div{
+    width: 50%;
+    background: orange;
+    height: 100% ;
+    background: #763626;
+}
+
+.btn-group{
+    padding: 15px 32px;
+}
+.btn{
+    background-color: #a2c523;
+    border-radius: 40%;
+    padding: 15px 32px;
+    border-color: #486b00;
+}
+
+
+.score-container{
+    position: relative;
+}
+.score{
+    position: absolute;
+    bottom: 0;
+
+}
+
+/*----------------------------*/
+/*------ move Display      */
+
+.moveDisplay{
+    background-color: grey;
+    width: 100%;
+    height: 20vh;
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
