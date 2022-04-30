@@ -37,7 +37,7 @@ body{
     background: #763626;
 }
 
-.btn-group{
+.btnGroup{
     padding: 15px 32px;
 }
 .btn{
@@ -51,10 +51,12 @@ body{
 .score-container{
     position: relative;
 }
+.score-container p {
+    display: block;
+}
 .score{
     position: absolute;
     bottom: 0;
-
 }
 
 /*----------------------------*/

@@ -42,17 +42,35 @@ function playRound ( playerSelection, computerSelection ) {
     }
 }
 
+function updateScoreOnScreen (  ) {
+    let compPoints = documement.querySelector(".compPoints");
+    compPoints.textContent = computerScore ;
+
+    let playerPoints = documement.querySelector(".playerPoints");
+    playerPoints.textContent = playerScore;
+}
+
+
 let playerScore =0;
 let computerScore =0;
+let computerSelection = null;
+let playerSelection = null;
 
 
-const wrapper = document.querySelector("btn-group");
+
+const wrapper = document.getElementById("btnGrp");
 wrapper.addEventListener('click', (event) => {
-  const isButton = event.target.nodeName === 'button';
+  const isButton = event.target.nodeName === 'BUTTON';
   if (!isButton) {
     return;
   }
 
-  console.dir(event.target.id);
+  playerSelection = event.target.id;
+  computerSelection = computerPlay();
+  playRound(playerSelection, computerSelection);
 })
+
+
+
+
 
