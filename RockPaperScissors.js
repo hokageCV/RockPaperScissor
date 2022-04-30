@@ -43,11 +43,11 @@ function playRound ( playerSelection, computerSelection ) {
 }
 
 function updateScoreOnScreen (  ) {
-    let compPoints = documement.querySelector(".compPoints");
-    compPoints.textContent = computerScore ;
+    let compPoints = document.getElementById("compPoints");
+    compPoints.textContent = `${computerScore}` ;
 
-    let playerPoints = documement.querySelector(".playerPoints");
-    playerPoints.textContent = playerScore;
+    let playerPoints = document.getElementById("playerPoints");
+    playerPoints.textContent = `${playerScore}`
 }
 
 
@@ -68,6 +68,7 @@ wrapper.addEventListener('click', (event) => {
   playerSelection = event.target.id;
   computerSelection = computerPlay();
   playRound(playerSelection, computerSelection);
+  updateScoreOnScreen();
 })
 
 

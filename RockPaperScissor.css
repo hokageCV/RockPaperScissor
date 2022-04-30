@@ -18,19 +18,24 @@ body{
 .container{
     display: flex;
     flex-direction: row;
-    width:100%;
     height: 40vh;
-    text-align: center;
     font-size: 400%;
-    /*align-items: center;*/
-    /*justify-content: center;*/
 }
+
 .player-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 50%;
     height: 100%;
     background: #5e88b3;
 }
 .computer-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 50%;
     background: orange;
     height: 100% ;
@@ -48,16 +53,6 @@ body{
 }
 
 
-.score-container{
-    position: relative;
-}
-.score-container p {
-    display: block;
-}
-.score{
-    position: absolute;
-    bottom: 0;
-}
 
 /*----------------------------*/
 /*------ move Display      */
