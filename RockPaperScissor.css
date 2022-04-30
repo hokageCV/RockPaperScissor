@@ -51,6 +51,11 @@ body{
     padding: 15px 32px;
     border-color: #486b00;
 }
+.btn:hover{
+    background-color: #37BC61;
+    border-radius: 50%;
+    border-color: #87CEFF;
+}
 
 
 
