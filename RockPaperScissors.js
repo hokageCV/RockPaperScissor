@@ -4,6 +4,7 @@ function computerPlay() {
     return moves[Math.floor( Math.random()*moves.length )];
 }
 
+const roundsDiv = document.getElementById("rounds")
 
 let playerScore =0;
 let computerScore =0;
@@ -13,6 +14,7 @@ let playerSelection = null;
 
 // play round
 function playRound (playerSelection, computerSelection) {
+    const round = document.createElement("p")
 
     if(computerSelection == 'rock'){
         if(playerSelection == 'paper'){
@@ -54,7 +56,7 @@ function playRound (playerSelection, computerSelection) {
 }
 
 
-// update scor board on screen
+// update score board on screen
 function updateScoreBoard () {
     let compPoints = document.getElementById("compPoints");
     compPoints.textContent = `${computerScore}` ;
