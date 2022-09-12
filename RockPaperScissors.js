@@ -1,55 +1,11 @@
+import {playRound} from "./playRound.js";
+import {updateScoreBoard} from "./updateScoreBoard.js"
+
 function computerPlay() {
     let moves = ['rock', 'paper', 'scissor'];
     return moves[Math.floor( Math.random()*moves.length )];
 }
-
-function playRound ( playerSelection, computerSelection ) {
-    if(computerSelection == 'rock'){
-        if(playerSelection == 'paper'){
-            console.log( `${playerSelection} vs ${computerSelection} : player jeet gaya ` );
-            playerScore++;
-        }
-        else if( playerSelection == 'rock')
-            console.log( `${playerSelection} vs ${computerSelection} : mukabala barabari ka raha ` );
-        else{
-            console.log( `${playerSelection} vs ${computerSelection} : computer jeet gaya ` );
-            computerScore++;
-        }
-    }
-    else if(computerSelection == 'paper'){
-        if(playerSelection == 'scissor'){
-            console.log( `${playerSelection} vs ${computerSelection} : player jeet gaya ` );
-            playerScore++;
-        }
-        else if( playerSelection == 'paper')
-            console.log( `${playerSelection} vs ${computerSelection} : mukabala barabari ka raha ` );
-        else{
-            console.log( `${playerSelection} vs ${computerSelection} : computer jeet gaya ` );
-            computerScore++;
-        }
-    }
-    else if(computerSelection == 'scissor'){
-        if(playerSelection == 'rock'){
-            console.log( `${playerSelection} vs ${computerSelection} : player jeet gaya ` );
-            playerScore++;
-        }
-        else if( playerSelection == 'scissor')
-            console.log( `${playerSelection} vs ${computerSelection} : mukabala barabari ka raha ` );
-        else{
-            console.log( `${playerSelection} vs ${computerSelection} : computer jeet gaya ` );
-            computerScore++;
-        }
-    }
-}
-
-function updateScoreOnScreen (  ) {
-    let compPoints = document.getElementById("compPoints");
-    compPoints.textContent = `${computerScore}` ;
-
-    let playerPoints = document.getElementById("playerPoints");
-    playerPoints.textContent = `${playerScore}`
-}
-
+const roundsDiv = document.querySelector(".rounds")
 
 let playerScore =0;
 let computerScore =0;
@@ -67,8 +23,8 @@ wrapper.addEventListener('click', (event) => {
 
   playerSelection = event.target.id;
   computerSelection = computerPlay();
-  playRound(playerSelection, computerSelection);
-  updateScoreOnScreen();
+  playRound(playerSelection, computerSelection, playerScore, computerScore);
+  updateScoreBoard(playerScore, computerScore);
 })
 
 
